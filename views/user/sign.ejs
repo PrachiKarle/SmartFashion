@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <%- include('../cdn.ejs')%>
+</head>
+<body>
+    <div class="row m-0 p-0 d-flex justify-content-center align-items-center" style="height:100vh">
+        <div class="col-md-3 m-0 p-0">
+            <h4 class="text-center my-5">Log In</h4>
+            <form action="/loginuser" method="post" class="my-3">
+                <input type="email" name="useremail" placeholder="Email Address" class="form-control my-3" required>
+                <input type="password" name="userpass" placeholder="Password" class="form-control my-3" required>
+                <button class="btn btn-success form-control">Log In</button>
+            </form>
+            <p class="text-center my-5" style="font-size: medium;">New to site ? <a href="/signup" class="text-success">Sign Up</a></p>
+        </div>
+    </div>
+</body>
+</html>

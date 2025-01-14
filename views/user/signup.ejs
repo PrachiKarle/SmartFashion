@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <%- include('../cdn.ejs')%>
+    <style>
+        #id1{
+            border: none !important;
+            /* border:1px solid white !important; */
+        }
+    </style>
+  </head>
+  <body>
+    <div
+      class="row m-0 p-0 d-flex justify-content-center align-items-center"
+      style="height: 100vh"
+    >
+      <div class="col-md-3 m-0 p-0">
+        <h4 class="text-center my-5">Sign Up</h4>
+
+        <form action="/createAccount" method="post" class="my-3">
+          <input
+            type="text" name="username"
+            placeholder="Username" value="<%= data.username%>"
+            class="form-control my-3"
+            required
+          />
+          <input
+            type="email" name="useremail"
+            placeholder="Email Address" value="<%= data.useremail%>"
+            class="form-control my-3"
+            required
+          />
+          <input
+            type="password" name="userpass"
+            placeholder="Password" value="<%= data.userpass%>"
+            class="form-control my-3"
+            required
+          />
+          <input
+          type="password" name="userCpass"
+          placeholder="Confirm Password"
+          class="form-control my-3" value="<%= data.userCpass%>"
+          required
+        />
+           <input readonly id="id1" name="err" value="<%= data.err %>" class="text-danger mb-2" />
+
+          <button class="btn btn-success form-control">Sign Up</button>
+        </form>
+
+        <p class="text-center my-5" style="font-size: medium">
+          Already have a Account ? <a href="/sign" class="text-success">Sign In</a>
+        </p>
+
+      </div>
+    </div>
+  </body>
+</html>

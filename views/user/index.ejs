@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include('../cdn.ejs')%>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="row m-0 p-0 bg-light">
+      <div class="col-md-9 p-2 bg-light"></div>
+      <div class="col-md-3 p-2 bg-light">
+        <i
+          class="bi bi-search text-dark fw-bold mx-2"
+          style="font-size: smaller"
+        ></i>
+        <i
+          class="bi bi-cart text-dark fw-bold mx-2"
+          style="font-size: smaller"
+        ></i>
+        <i
+          class="bi bi-person-fill text-dark fw-bold mx-2"
+          style="font-size: smaller"
+        ></i>
+        <a href="/sign"><button class="btn btn-dark btn-sm">Log in</button></a>
+        <b><%= usernm%></b>
+      </div>
+    </div>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark text-light px-5 py-3">
+      <a
+        href="#"
+        class="navbar-brand text-light fw-normal"
+        style="font-size: large"
+        >SMART FASION</a
+      >
+      <button
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="nav"
+      >
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="/" class="nav-link text-light">Home</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <a
+                href=""
+                class="nav-link text-light dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Collections</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="" class="dropdown-item">Women</a></li>
+                <li><a href="" class="dropdown-item">Accessories</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link text-light">Lookbook</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link text-light">Customer Care</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- home page -->
+
+    <div class="row m-0 p-0" style="height: 60vh">
+      <div class="col-md-8 col-12 m-auto px-4 h-100">
+        <div class="row m-0 p-0 h-100">
+          <div class="col-md-6 col-12 p-0 m-0 h-100">
+            <img src="/images/home.jpg" height="100%" width="100%" alt="" />
+          </div>
+          <div
+            class="col-md-6 col-12 p-5 d-flex justify-content-center align-items-center"
+            style="background-color: #ffe9e3"
+          >
+            <div>
+              <h4 class="text-dark text-center fw-normal">SULTRY & SMART</h4>
+              <h6 class="text-center fw-bold my-3">Women's Fashion</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row m-0 p-0" style="background-color: #d4e4e0; height: 60vh">
+      <div class="col-md-8 col-12 m-auto px-4 h-100">
+        <div class="row m-0 p-0 h-100">
+          <div
+            class="col-md-6 col-12 p-5 d-flex justify-content-center align-items-center"
+            style="background-color: #a3c7bd"
+          >
+            <div>
+              <h4 class="text-light text-center fw-normal">ELEGANT & SLICK</h4>
+              <h6 class="text-center text-light fw-bold my-3">Shop Now</h6>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-12 p-0 m-0 h-100">
+            <img src="/images/home1.jpg" height="100%" width="100%" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- new arrivals -->
+    <h4 class="text-center fw-normal mt-5 mb-3">NEW ARRIVALS</h4>
+    <div class="row m-0 p-0" style="height: 80vh">
+      <div class="col-md-4 p-5" style="height: 80vh">
+        <img src="/images/new1.avif" height="100%" width="100%" alt="" />
+      </div>
+      <div class="col-md-4 p-5" style="height: 80vh">
+        <img src="/images/new2.avif" height="100%" width="100%" alt="" />
+      </div>
+      <div class="col-md-4 p-5" style="height: 80vh">
+        <img src="/images/new3.jpg" height="100%" width="100%" alt="" />
+      </div>
+    </div>
+
+    <div class="row m-0 p-0 py-3">
+      <div class="col-md-6 col-12 m-auto text-center">
+        <h5 class="text-center fw-normal">GET ON THE LIST</h5>
+        <b class="fw-normal"
+          >and be the first to shop new arrivals and exclusive promotions</b
+        >
+        <form action="" class="text-center">
+          <input
+            type="email"
+            name="email"
+            placeholder="enter your email address"
+            class="form-control my-4"
+            required
+          />
+          <button class="btn" style="background-color: #a3c7bd">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container-fluid m-0 my-5 p-0">
+      <img src="/images/last.jpg" height="100%" width="100%" alt="" />
+    </div>
+
+    <footer
+      class="text-center container-fluid m-0 p-2"
+      style="background-color: #e4e4e4"
+    >
+      <p class="my-3">
+        <a href="" class="text-decoration-none text-secondary mx-2">Home</a> <a href="" class="text-decoration-none text-secondary mx-2">Women's Fashion</a>
+        <a href="" class="text-decoration-none text-secondary mx-2">Accessories</a> <a href="" class="text-decoration-none text-secondary mx-2">Lookbook</a>
+        <a href="" class="text-decoration-none text-secondary mx-2">Customer Care</a> <a href="" class="text-decoration-none text-secondary mx-2">Profile</a>
+      </p>
+      <p class="text-secondary mt-3" style="line-height: 0%;">All rights are reserved </p>
+      <p class="text-success fw-bold" style="font-size: small;">SMART FASION</p>
+    </footer>
+  </body>
+</html>
