@@ -14,11 +14,12 @@
           method="post"
           enctype="multipart/form-data"
         >
+        <input type="text" name="coll_id" value="<%= data.Id%>" hidden>
           <div class="form-group my-2">
             <label for="">Update Name</label>
             <input
               type="text"
-              name="coll_name"
+              name="coll_name" value="<%= data.Name %>"
               class="form-control"
               placeholder="Enter Name"
               required
@@ -28,7 +29,7 @@
             <label for="">Update Price</label>
             <input
               type="text"
-              name="coll_price"
+              name="coll_price" value="<%= data.Price %>"
               class="form-control my-2"
               placeholder="Enter Price"
               required
@@ -39,12 +40,13 @@
             <input
               type="file"
               name="coll_img"
-              class="form-control my-2"
+              class="form-control my-3"
               placeholder="Enter Image"
               required
             />
+            <a href="/uploads/<%= data.Image%>" class="text-light bg-info px-3 py-2  text-decoration-none">View Image</a>
           </div>
-          <button class="btn btn-danger m-auto">Update</button>
+          <button class="btn btn-danger my-3">Update</button>
         </form>
       </div>
     </div>

@@ -46,6 +46,20 @@ router.get('/edit_coll/:id',async(req,res)=>{
     var d=await exe(sql,[id]);
     res.render('admin/editColl.ejs',{data:d[0]});
 })
+router.post('/updatecoll',async(req,res)=>{
+    const {coll_id,coll_name,coll_price}=req.body;
+    if(req.files)
+    {
+        var file=req.files.coll_img;
+        var filename=new Date().getTime()+"_"+file.name;
+        file.mv('public/uploads/'+filename);
+        var sql=`update collections set Image='${filename}' where Id='${coll_id}'`;
+        await exe(sql);
+    }
+    var sql=`update collections set Name='${coll_name}', Price='${coll_price}' where Id='${coll_id}'`;
+    await exe(sql);
+    res.redirect('/admin/collections');
+})
 
 
 module.exports=router;
