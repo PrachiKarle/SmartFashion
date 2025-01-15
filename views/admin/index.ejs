@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <%- include('../cdn.ejs')%>
-</head>
-<body>
-    <div class="row m-0 p-5">
-        <div class="col-md-6 col-12 m-auto">
-            
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <%- include('./navbar.ejs')%>
+  </head>
+  <body>
+    <div class="row m-0 p-0">
+      <div class="col-md-8 col-12 m-0 p-0 m-auto">
+        <table class="table table-hover table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Email</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.map((val)=>{%>
+            <tr>
+              <td><%= val.username%></td>
+              <td><%= val.useremail%></td>
+              <td>
+                <a href="/admin/view/<%= val.userid%>">
+                  <i class="bi bi-search text-success fw-bold"></i>
+                </a>
+              </td>
+              <td>
+                <a href="/admin/edit/<%= val.userid%>">
+                  <i class="bi bi-pencil-square text-success fw-bold"></i>
+                </a>
+              </td>
+              <td>
+                <a href="/admin/delete/<%= val.userid%>">
+                  <i class="bi bi-archive text-danger fw-bold"></i>
+                </a>
+              </td>
+            </tr>
+            <%})%>
+          </tbody>
+        </table>
+      </div>
     </div>
-</body>
+  </body>
 </html>

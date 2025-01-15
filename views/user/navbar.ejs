@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../cdn.ejs')%>
+</head>
+<body>
+
+     <!-- header -->
+    <div class="row m-0 p-0 bg-light">
+      <div class="col-md-9 p-2 bg-light"></div>
+      <div class="col-md-3 p-2 bg-light">
+        <i
+          class="bi bi-search text-dark fw-bold mx-2"
+          style="font-size: smaller"
+        ></i>
+        <i
+          class="bi bi-cart text-dark fw-bold mx-2"
+          style="font-size: smaller"
+        ></i>
+        <i
+          class="bi bi-person-fill text-dark fw-bold mx-2"
+          style="font-size: smaller"
+        ></i>
+        <a href="/sign"><button class="btn btn-dark btn-sm">Log in</button></a>
+        <b><%= usernm%></b>
+      </div>
+    </div>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark text-light px-5 py-3">
+      <a
+        href="#"
+        class="navbar-brand text-light fw-normal"
+        style="font-size: large"
+        >SMART FASION</a
+      >
+      <button
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="nav"
+      >
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="/" class="nav-link text-light">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/collection" class="nav-link text-light">Collections</a>
+          </li>
+          <li class="nav-item">
+            <a href="/accessories" class="nav-link text-light">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a href="/customercare" class="nav-link text-light">Customer Care</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  
+</body>
+</html>

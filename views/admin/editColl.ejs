@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Collections</title>
+    <%- include('./navbar.ejs')%>
+  </head>
+  <body>
+    <div class="row m-0 p-0">
+      <div class="col-md-8 col-12 m-0 p-0 m-auto">
+        <form
+          action="/admin/updatecoll"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group my-2">
+            <label for="">Update Name</label>
+            <input
+              type="text"
+              name="coll_name"
+              class="form-control"
+              placeholder="Enter Name"
+              required
+            />
+          </div>
+          <div class="form-group my-2">
+            <label for="">Update Price</label>
+            <input
+              type="text"
+              name="coll_price"
+              class="form-control my-2"
+              placeholder="Enter Price"
+              required
+            />
+          </div>
+          <div class="form-group my-2">
+            <label for="">Update Image</label>
+            <input
+              type="file"
+              name="coll_img"
+              class="form-control my-2"
+              placeholder="Enter Image"
+              required
+            />
+          </div>
+          <button class="btn btn-danger m-auto">Update</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

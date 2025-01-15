@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Care</title>
+    <%- include('./navbar.ejs')%>
+  </head>
+  <body>
+
+    <div class="row m-0 py-3 text-center" style="background-color: #f5f3f2">
+      <h6 class="fw-normal text-dark">CUSTOMER CARE</h6>
+    </div>
+
+    
+    <div class="row m-0 p-0 text-center py-5">
+      <h5 class="text-primary">
+        Have Any Questions or Concerns ? We're always ready to help !
+      </h5>
+
+      <div class="col-md-6 col-12 m-auto m-0 p-0">
+        <form action="/savecontact" method="post">
+          <input
+            type="text"
+            class="form-control my-3"
+            name="username"
+            placeholder="Enter your name"
+            required
+          />
+          <input
+            type="email"
+            class="form-control my-3"
+            name="useremail"
+            placeholder="Enter your Email"
+            required
+          />
+          <input
+            type="text"
+            class="form-control my-3"
+            name="userno"
+            placeholder="Enter your Contact Number"
+            required
+          />
+          <textarea
+            name="usermsg"
+            placeholder="Enter Messagae"
+            class="form-control"
+          ></textarea>
+          
+          <button class="btn btn-danger px-4 py-2 my-3">Send Message</button>
+
+        </form>
+      </div>
+    </div>
+
+    <%- include('./footer.ejs')%>
+  </body>
+</html>
