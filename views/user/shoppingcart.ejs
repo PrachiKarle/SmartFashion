@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <%- include('./navbar.ejs')%>
+  </head>
+  <body>
+    <div class="row m-0 p-0">
+      <div class="col-md-6 col-10 m-auto p-3">
+        <h5 class="text-center">My Shopping Cart</h5>
+
+        <% if(data.length==0) {%>
+        <div
+          class="row my-3 p-2"
+          style="border-top: 1px solid rgb(182, 180, 180)"
+        >
+          <h6 class="text-center">Cart is Empty</h6>
+        </div>
+
+        <%}%>
+        
+        <% data.map((val)=>{%>
+        <div
+          class="row m-0 my-5"
+          style="
+            height: 20vh;
+            border-top: 1px solid rgb(182, 180, 180);
+            border-bottom: 1px solid rgb(182, 180, 180);
+          "
+        >
+          <div class="col-md-3 h-100">
+            <img src="/uploads/<%= val.Image%>" height="100%" width="100%" />
+          </div>
+
+          <div class="col-md-7 py-4">
+            <h6 class="text-primary my-2"><%= val.Category%></h6>
+            <h6 class="fw-bold"><%= val.Name%></h6>
+          </div>
+
+          <div
+            class="col-md-2 d-flex justify-content-center align-items-center"
+          >
+            <h6 class="text-dark fw-bold">
+             $<%= val.Price%> x <%= val.quantity%>
+            </h6>
+          </div>
+        </div>
+        <%})%>
+
+        <div class="my-2 p-3" style="border-top: 1px solid rgb(182, 180, 180)">
+          <h6 class="fw-normal">TOTAL PRICE - <b id="price"> $<%= total%></b></h6>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./footer.ejs')%>
+
+  
+  </body>
+</html>

@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessories - Women</title>
+     <!-- navbar -->
     <%- include('./navbar.ejs')%>
 </head>
 <body>
-    
+     <!-- header -->
     <div class="row m-0 py-3 text-center" style="background-color: #f5f3f2">
         <h6 class="fw-normal text-dark">Accessories</h6>
     </div>
 
+    <div class="row m-0 p-5">
+        <% data.map((val,i)=>{%> 
+               <div class="col-md-3 col-sm-6 col-12 p-3 my-4">
+                   <div class="w-100 h-100 text-center">
+                        <img src="/uploads/<%= val.Image%>" height="75%" width="100%" alt="<%= val.Image%>">
+                        <h6 class="text-center my-3 fw-bold"><%= val.Name%></h6>
+                        <h6 class="text-center fw-normal"><%= val.Price%></h6>
+                        <a href="/view/<%= val.Id%>/accessories"><button class="m-auto btn btn-dark btn-sm">Quick view</button></a>
+                   </div>
+               </div>
+        <%})%>
+    </div>
+
+    <!-- footer -->
     <%- include('./footer.ejs')%>
 </body>
 </html>

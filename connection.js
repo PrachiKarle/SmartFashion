@@ -4,7 +4,7 @@ var conn=mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'',
-    database:'smartfashion',
+    database:'Fashion',
     port:3306
 })
 

@@ -50,15 +50,11 @@
     <!-- new arrivals -->
     <h4 class="text-center fw-normal mt-5 mb-3">NEW ARRIVALS</h4>
     <div class="row m-0 p-0" style="height: 80vh">
+      <% data.map((val)=>{%>
       <div class="col-md-4 p-5" style="height: 80vh">
-        <img src="/images/new1.avif" height="100%" width="100%" alt="" />
+        <img src="/uploads/<%= val.Image%>" height="100%" width="100%" alt="<%= val.Image%>" />
       </div>
-      <div class="col-md-4 p-5" style="height: 80vh">
-        <img src="/images/new2.avif" height="100%" width="100%" alt="" />
-      </div>
-      <div class="col-md-4 p-5" style="height: 80vh">
-        <img src="/images/new3.jpg" height="100%" width="100%" alt="" />
-      </div>
+      <%})%>
     </div>
 
     <div class="row m-0 p-0 py-3">
@@ -84,7 +80,6 @@
       <img src="/images/last.jpg" height="100%" width="100%" alt="" />
     </div>
 
-   
     <%- include('./footer.ejs')%>
   </body>
 </html>

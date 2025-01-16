@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <%- include('../cdn.ejs')%>
+</head>
+<body>
+    <div class="row m-0 p-5 d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-md-5 m-auto col-10 bg-light p-4">
+            <h5 class="text-center text-dark fw-bold">Admin Login</h5>
+
+            <form action="/admin/adminlogin" method="post">
+                <div class="form-group my-3">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="adminemail">
+                </div>
+                <div class="form-group my-3">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" name="adminpass">
+                </div>
+                <div class="form-group my-3">
+                    <button class="btn btn-danger">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -68,7 +68,7 @@
                     <td><%= i+1%></td>
                     <td><%= val.Name%></td>
                     <td><%= val.Price%></td>
-                    <td><%= val.Image%></td>
+                    <td><img src="/uploads/<%= val.Image%>" height="60px" alt="<%= val.Image%>"></td>
                     <td>
                         <a href="/admin/edit_coll/<%= val.Id%>" onclick="return confirm('Are u sure ? ')">
                             <i class="fa fa-edit text-success fw-bold"></i>
@@ -83,6 +83,82 @@
             <%})%>
           </tbody>
         </table>
+
+
+        <!-- accessories -->
+        <button
+        class="btn btn-success ms-auto mt-5"
+        data-bs-toggle="collapse"
+        data-bs-target="#data2"
+      >
+        Add Women's Accessories
+      </button>
+
+      <div class="collapse row m-0 p-5" id="data2">
+        <form action="/admin/saveacc" method="post" enctype="multipart/form-data">
+          <div class="form-group my-2">
+            <label for="">Name</label>
+            <input
+              type="text"
+              name="acc_name"
+              class="form-control"
+              placeholder="Enter Name" required
+            /> 
+          </div>
+          <div class="form-group my-2">
+            <label for="">Price</label>
+            <input
+              type="text"
+              name="acc_price"
+              class="form-control my-2"
+              placeholder="Enter Price" required
+            />
+          </div>
+          <div class="form-group my-2">
+            <label for="">Image</label>
+            <input
+              type="file"
+              name="acc_img"
+              class="form-control my-2"
+              placeholder="Enter Image" required
+            />
+          </div>
+          <button class="btn btn-danger m-auto">Add</button>
+        </form>
+      </div>
+
+      <table class="table table-hover table-bordered table-striped my-3">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Images</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data1.map((val,i)=>{%>
+              <tr>
+                  <td><%= i+1%></td>
+                  <td><%= val.Name%></td>
+                  <td><%= val.Price%></td>
+                  <td><img src="/uploads/<%= val.Image%>" height="60px" alt="<%= val.Image%>"></td>
+                  <td>
+                      <a href="/admin/edit_acc/<%= val.Id%>" onclick="return confirm('Are u sure ? ')">
+                          <i class="fa fa-edit text-success fw-bold"></i>
+                      </a>
+                  </td>
+                  <td>
+                      <a href="/admin/del_acc/<%= val.Id%>" onclick="return confirm('Are u sure ? ')">
+                          <i class="fa fa-trash text-danger fw-bold"></i>
+                      </a>
+                  </td>
+              </tr>
+          <%})%>
+        </tbody>
+      </table>
       </div>
     </div>
   </body>

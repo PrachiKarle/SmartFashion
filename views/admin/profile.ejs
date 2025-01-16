@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Profile</title>
+    <%- include('./navbar.ejs')%>
+  </head>
+  <body>
+    <div class="row m-0 p-0">
+      <div class="col-md-8 col-12 m-auto p-0">
+        <div class="row m-0 p-3">
+          <div
+            class="col-4 p-4 m-md-0 m-auto text-center"
+            style="box-shadow: 0 0 5px 2px rgb(235, 235, 235);height: 50vh;"
+          >
+            <div
+              class="m-0 p-1 m-auto"
+              style="
+                border: 1px solid rgb(235, 235, 235);
+                border-radius: 50%;
+                width: 30%;
+              "
+            >
+              <img src="/images/profile.jpg" class="img-fluid" alt="" />
+            </div>
+
+            <h5 class="fw-normal my-3"><%= data.Name%></h5>
+            <h6 class="fw-normal"><%= data.Description%></h6>
+
+            <div class="d-flex justify-content-between px-4 py-2">
+              <a
+                href="/admin/sign"
+                data-bs-toggle="collapse"
+                data-bs-target="#data"
+                ><button class="btn btn-dark text-light px-4 py-2 btn-sm">
+                  Add
+                </button></a
+              >
+
+              <a
+                href="/admin/deladmin/<%= data.Id%>"
+                data-bs-toggle="collapse"
+                data-bs-target="#data"
+                ><button class="btn btn-dark text-light px-4 py-2 btn-sm">
+                  Delete
+                </button></a
+              >
+            </div>
+          </div>
+          <div class="col-md-8 px-4 py-0 col-12">
+            <div
+              class="row m-0 p-0"
+              style="box-shadow: 0 0 5px 2px rgb(235, 235, 235)"
+            >
+              <form action="/admin/updateadmin" method="post">
+                <div class="form-group my-3">
+                    <label for="">Name</label>
+                    <input type="text" name="adminname" value="<%= data.Name%>" class="form-control" />
+                  </div>
+                  <div class="form-group my-3">
+                    <label for="">Email</label>
+                    <input type="email" name="adminemail" value="<%= data.Email%>" class="form-control" />
+                  </div>
+                  <div class="form-group my-3">
+                    <label for="">Contact Number</label>
+                    <input type="text" name="adminno" value="<%= data.Number%>" class="form-control" />
+                  </div>
+                  <div class="form-group my-3">
+                    <label for="">Password</label>
+                    <input type="text" name="adminpass" value="<%= data.Password%>" class="form-control" />
+                  </div>
+                  <div class="form-group my-3">
+                    <label for="">Description</label>
+                    <input type="text" name="admindesc" value="<%= data.Description%>" class="form-control" />
+                  </div>
+                  <div class="form-group my-3">
+                    <button class="btn btn-dark">Update Admin</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-0 p-0 my-2">
+      <div class="col-md-8 col-10 m-auto collapse bg-light px-5 py-2" id="data">
+        <form action="/admin/saveadmin" method="post">
+          <div class="form-group my-3">
+            <label for="">Name</label>
+            <input type="text" name="adminname" class="form-control" />
+          </div>
+          <div class="form-group my-3">
+            <label for="">Email</label>
+            <input type="email" name="adminemail" class="form-control" />
+          </div>
+          <div class="form-group my-3">
+            <label for="">Contact Number</label>
+            <input type="text" name="adminno" class="form-control" />
+          </div>
+          <div class="form-group my-3">
+            <label for="">Password</label>
+            <input type="password" name="adminpass" class="form-control" />
+          </div>
+          <div class="form-group my-3">
+            <label for="">Description</label>
+            <input type="text" name="admindesc" class="form-control" />
+          </div>
+          <div class="form-group my-3">
+            <button class="btn btn-dark">Add Admin</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

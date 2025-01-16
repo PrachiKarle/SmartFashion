@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <%- include('./navbar.ejs')%>
+  </head>
+  <body>
+    <div class="row m-0 p-5">
+      <div
+        class="col-md-8 col-12 m-0 p-5 m-auto"
+        style="border: 1px solid rgb(174, 174, 174)"
+      >
+        <div class="d-flex">
+          <div class="p-1" style="height: 80px; width: 15%">
+            <img
+              src="/images/profile.jpg"
+              style="border-radius: 50%"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+          <div class="mx-5">
+            <h6 class="text-primary"><%= data.username%></h6>
+            <a href="/cart"
+              ><button class="btn btn-info my-3 text-light btn-sm">
+                Check Your Cart
+              </button></a
+            >
+          </div>
+        </div>
+        <div class="p-3 my-3" style="border-top: 1px solid rgb(174, 174, 174)">
+          <h5>My Account</h5>
+          <h6
+            class="fw-normal py-2"
+            style="border-bottom: 1px solid rgb(174, 174, 174)"
+          >
+            View and edit your personal info below
+          </h6>
+
+          <form action="/updateuser" method="post">
+
+            <label class="fw-normal my-3">Login Username</label>
+            <input type="text" class="form-control" name="username" value="<%= data.username%>">
+           
+
+            <label class="fw-normal my-3">Login Useremail</label>
+            <input type="email" class="form-control" name="useremail" value="<%= data.useremail%>">
+           
+            <label class="fw-normal my-3">Login Userpass</label>
+            <input type="text" class="form-control" name="userpass" value="<%= data.userpass%>">
+
+            <button class="btn btn-info text-light btn-sm my-3">Update User</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -16,7 +16,7 @@
               <th>Email</th>
               <th></th>
               <th></th>
-              <th></th>
+              
             </tr>
           </thead>
           <tbody>
@@ -25,17 +25,13 @@
               <td><%= val.username%></td>
               <td><%= val.useremail%></td>
               <td>
-                <a href="/admin/view/<%= val.userid%>">
-                  <i class="bi bi-search text-success fw-bold"></i>
+                <a href="/admin/view/<%= val.id%>">
+                  <i class="bi bi-search text-primary fw-bold"></i>
                 </a>
               </td>
+              
               <td>
-                <a href="/admin/edit/<%= val.userid%>">
-                  <i class="bi bi-pencil-square text-success fw-bold"></i>
-                </a>
-              </td>
-              <td>
-                <a href="/admin/delete/<%= val.userid%>">
+                <a href="/admin/del/<%= val.id%>" onclick="return confirm('Are u sure ? ')">
                   <i class="bi bi-archive text-danger fw-bold"></i>
                 </a>
               </td>

@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <%- include('../cdn.ejs')%>
-</head>
-<body>
-
-     <!-- header -->
+  </head>
+  <body>
+    <!-- header -->
     <div class="row m-0 p-0 bg-light">
-      <div class="col-md-9 p-2 bg-light"></div>
-      <div class="col-md-3 p-2 bg-light">
+      <div class="col-md-7 p-2 bg-light"></div>
+      <div class="col-md-5 p-2 bg-light text-center">
         <i
           class="bi bi-search text-dark fw-bold mx-2"
           style="font-size: smaller"
         ></i>
-        <i
-          class="bi bi-cart text-dark fw-bold mx-2"
-          style="font-size: smaller"
-        ></i>
-        <i
+        <a href="/cart"
+          ><i
+            class="bi bi-cart text-dark fw-bold mx-2"
+            style="font-size: smaller"
+          ></i
+        ></a>
+        <a href="/userprofile"><i
           class="bi bi-person-fill text-dark fw-bold mx-2"
           style="font-size: smaller"
-        ></i>
+        ></i></a>
+
+        <%if(usernm){%>
+        <b>Welcome, <%= usernm%></b>
+        <%} else{%>
         <a href="/sign"><button class="btn btn-dark btn-sm">Log in</button></a>
-        <b><%= usernm%></b>
+        <%}%>
+
+        <a href="/admin/login"
+          ><button class="btn btn-dark btn-sm mx-3">Admin</button></a
+        >
       </div>
     </div>
 
@@ -57,12 +66,12 @@
             <a href="/accessories" class="nav-link text-light">Accessories</a>
           </li>
           <li class="nav-item">
-            <a href="/customercare" class="nav-link text-light">Customer Care</a>
+            <a href="/customercare" class="nav-link text-light"
+              >Customer Care</a
+            >
           </li>
         </ul>
       </div>
     </nav>
-
-  
-</body>
+  </body>
 </html>

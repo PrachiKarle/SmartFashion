@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections</title>
+    <!-- navbar -->
+    <%- include('./navbar.ejs')%>
+</head>
+<body>
+
+    <div class="row m-0 p-4">
+        <div class="col-md-9 m-auto col-12 p-2">
+            <div class="row m-0 p-0">
+                <div class="col-md-6 col-12">
+                    <img src="/uploads/<%= data.Image%>" height="100%" width="100%" alt="">
+                </div>
+                <div class="col-md-6 col-12 p-3">
+                  <div class="row m-0 p-0">
+                    <h6 class="text-primary fw-bold">Collections</h6>
+                    <h3 class="my-3"><%= data.Name%></h3>
+
+                    <h5><%= data.Price%></h5>
+                    <h6 class="text-success my-3">In Stock</h6>
+                    <h6 class="fw-bold">Quantity</h6>
+                    <form action="/addtocart" method="post" class="pe-5 my-2">
+                          <input type="text" hidden name="tname" value="<%= tname%>">
+                          <input type="text" hidden name="id" value="<%= data.Id%>">
+                          <input type="number" class="form-control" name="quantity">
+                          <button class="btn btn-success px-4 my-3">Add to cart</button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <!-- footer -->
+     <%- include('./footer.ejs')%>
+</body>
+</html>
