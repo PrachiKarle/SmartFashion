@@ -3,6 +3,8 @@ const router = express.Router();
 
 var exe = require("../connection");
 
+
+
 //login admin
 router.get("/login", (req, res) => {
   res.render("admin/login.ejs");
@@ -75,12 +77,12 @@ router.post('/updateadmin',async(req,res)=>{
         var values=[adminname,adminemail,adminno,adminpass,admindesc,id];
 
         await exe(sql,values);
+        res.redirect('/admin/profile')
      }
      else {
         res.redirect("/admin/login");
     }
 })
-
 
 
 //profile admin
@@ -102,6 +104,9 @@ router.get("/logout", (req, res) => {
   }
   res.redirect("/");
 });
+
+
+
 
 
 //home admin

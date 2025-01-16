@@ -113,6 +113,10 @@ router.get('/view/:id/:tname',async(req,res)=>{
   res.render('user/viewProd.ejs',{data:d[0],usernm:name,tname:tnm});
 })
 
+
+
+
+//add to cart 
 router.post('/addtocart',async(req,res)=>{
   if(req.session.login_id){
     const {tname,id,quantity}=req.body;
@@ -149,7 +153,7 @@ router.get('/cart',async(req,res)=>{
       var sql2=`select sum(Price * quantity) as Total from cart where user_id=?`;
       var d1=await exe(sql2,[id]);
       
-      res.render('user/shoppingcart.ejs',{data:d,usernm:"",total:d1[0].Total});
+      res.render('user/shoppingcart.ejs',{data:d,usernm:name,total:d1[0].Total});
    }
    else{
     res.redirect("/sign");
@@ -167,7 +171,7 @@ router.get('/userprofile',async(req,res)=>{
           name = req.session.login_name;
           var id=req.session.login_id;
           var sql=`select* from user where id=?`;
-          var d=await exe(sql,[1]);
+          var d=await exe(sql,[id]);
           res.render('user/userProfile.ejs',{usernm:name,data:d[0]});
     }
     else{
@@ -192,6 +196,9 @@ router.post('/updateuser',async(req,res)=>{
       res.redirect("/sign");
   }
 })
+
+
+
 
 
 //login
